@@ -1,0 +1,16 @@
+{
+  "name": "test-electron-microphone",
+  "version": "1.0.0",
+  "description": "Minimal Electron app to test getUserMedia microphone recording",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^39.2.7"
+  }
+}
