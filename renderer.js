@@ -88,6 +88,11 @@ async function startRecording() {
         mediaRecorder.onstop = () => {
             appendLog(`MediaRecorder stopped, captured ${audioChunks.length} chunks`);
             // Could create a blob and play back, but not necessary for debugging
+            if (audioChunks.length > 0) {
+                document.getElementById('saveBtn').disabled = false;
+                appendLog(`Recording ready to save (${audioChunks.length} chunks)`);
+                setStatus('Recording ready to save');
+            }
         };
         mediaRecorder.onerror = (event) => {
             appendLog(`MediaRecorder error: ${event.error.name} - ${event.error.message}`);
@@ -154,10 +159,6 @@ function stopRecording() {
     setStatus('Stopped');
     document.getElementById('startBtn').disabled = false;
     document.getElementById('stopBtn').disabled = true;
-    if (audioChunks.length > 0) {
-        document.getElementById('saveBtn').disabled = false;
-        appendLog(`Recording ready to save (${audioChunks.length} chunks)`);
-    }
 }
 
 function saveRecording() {
