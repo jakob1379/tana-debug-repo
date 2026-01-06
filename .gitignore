@@ -6,6 +6,7 @@ package-lock.json
 .envrc
 .envrc~
 .direnv/
+.droid
 
 # Build outputs
 dist/

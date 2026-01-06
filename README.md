@@ -36,18 +36,19 @@ Since this minimal Electron app successfully accesses the microphone and capture
 
 ## How to Run the Test
 
-### Prerequisites
-- Nix (for development environment)
-- Node.js (provided by Nix shell)
+### Option 1: Using Nix (Recommended)
 
-### Steps
+**Prerequisites:**
+- [Nix](https://nixos.org/download/) installed on your system
+
+**Steps:**
 
 1. Enter the Nix development shell:
    ```bash
    nix develop
    ```
 
-2. Install dependencies:
+2. Install Node.js dependencies:
    ```bash
    npm install
    ```
@@ -57,9 +58,35 @@ Since this minimal Electron app successfully accesses the microphone and capture
    npm start
    ```
 
-4. The app will open with DevTools showing console logs.
+### Option 2: Using Standard Node.js/Electron
 
-5. Click "Start Recording" to test microphone access.
+**Prerequisites:**
+- Node.js 18+ installed
+- Electron dependencies for your platform:
+  - **Linux**: Install system libraries like `libgtk-3`, `libnss3`, `alsa-lib`, `libgbm1`
+  - **macOS**: Should work out of the box with Homebrew
+  - **Windows**: Should work with standard Electron installation
+
+**Steps:**
+
+1. Install Node.js dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Run the app:
+   ```bash
+   npm start
+   ```
+
+   *Note: On Linux, you may need to install additional system libraries if you see "error while loading shared libraries" messages.*
+
+### Using the App
+
+1. The app will open with DevTools showing console logs.
+2. Click "Start Recording" to test microphone access.
+3. Click "Stop Recording" when finished.
+4. Click "Save Recording" to download the captured audio as a `.webm` file.
 
 ## App Features
 
